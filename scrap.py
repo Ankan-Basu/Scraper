@@ -19,12 +19,12 @@ def scraper(query):
     with open('a.txt', 'w') as file:
         for elem in x:
             cnt += 1
-            y = elem.children
-            z = next(y)
-            zzz = z.attrs['href']
-            zz = z.find('div', class_='BNeawe vvjwJb AP7Wnd').string
-            zzzz = str(zz) + '\n', str(zzz) + '\n', '\n\n'
-            results.append(zzzz)
+            anchor_iter = elem.children
+            anchor_tag = next(anchor_iter)
+            link = anchor_tag.attrs['href']
+            title = anchor_tag.find('div', class_='BNeawe vvjwJb AP7Wnd').string
+            result = str(title) + '\n', str(link) + '\n', '\n\n'
+            results.append(result)
 
             if (cnt == 5):
                 break

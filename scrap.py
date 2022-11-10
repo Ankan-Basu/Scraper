@@ -16,7 +16,7 @@ def scraper(query):
 
     results = []
     cnt = 0
-    with open('a.html', 'w') as file:
+    with open('a.txt', 'w') as file:
         for elem in x:
             cnt += 1
             y = elem.children
